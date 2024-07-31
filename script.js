@@ -49,6 +49,7 @@ let arr3=[2,5,6,8,90,1];
 console.log(arr3.sort());
 console.log(arr3.reverse());
 
+
 // 6.Array MAximum & Minimum
 
 function maximum(arr3)
@@ -185,7 +186,7 @@ function longestString(strarr)
 let strarr=["kabil","agash","gokul","irshadRajakfrm","Harisudhan"]
 console.log(longestString(strarr));
 
-// 17.ArrayvIntersection
+// 17.Array Intersection
 
 let first_array = [1, 3, 5, 7, 9];
 let second_array = [2, 3, 4, 5, 6, 9];
@@ -210,7 +211,26 @@ function ArrayRotation()
 }
 ArrayRotation(Array_rot,rot);
 
-// 19.Array Object sorting
+// 19.Create new array with the given size
+
+function newArray(val)
+{
+  let newArray1 = new Array(val);
+  console.log(newArray1)
+}
+newArray(5);
+
+//  20.Inserting element at specific position
+
+let array=[20,12,3,45,6]
+function ArraySplice()
+{
+    array.splice(2,0,5);
+    console.log(array);
+}
+ArraySplice();
+
+// 21.Array Object sorting
 let employees = [
     { name: 'Kabil', dob: 'Dec 15, 2007', score: 80 },
     { name: 'Raja',  score: 75 },
@@ -223,15 +243,59 @@ let employees = [
     console.log(`${e.name} ${e.score}`);
   });
 
-//  20.Inserting element at specific position
+//22.Array Equality
+let a1 = [1,2,3,4,5]
+let b1= [3,5,6,6,2]
+console.log(arrayequal(a1,b1))
 
-let array=[20,12,3,45,6]
-function ArraySplice()
+function arrayequal()
 {
-    array.splice(2,0,5);
-    console.log(array);
+return Array.isArray(a1) && Array.isArray(b1) && a1.length===b1.length && a1.every((val,index)=>val==b1[index]);
 }
-ArraySplice();
+
+//23. Implementing stack with array
+let stack = []
+function isEmptyStack(){
+    return stack.length === 0;
+}
+function pushStack(element){
+    stack.push(element);
+    return stack;
+}
+function popStack(){
+    let val = stack[stack.length - 1];
+    stack.pop();
+    return val;
+}
+function peekStack(){
+    return stack[stack.length - 1];
+}
+
+// 24.Creating array of array
+let nums = []
+nums.push([1,2,3,4])
+nums.push([5,6,7,8])
+nums.push([9,10,11,12])
+
+console.log(nums)
+
+// 25.Implementing queue with array
+let queue = []
+function isEmptyQueue(){
+    return queue.length === 0;
+}
+function pushQueue(element){
+    queue.unshift(element);
+    return element;
+}
+function popQueue(){
+    let val = queue[0];
+    queue.pop();
+    return val;
+}
+function peekQueue(){
+    return queue[queue.length - 1];
+}
 
 
 
